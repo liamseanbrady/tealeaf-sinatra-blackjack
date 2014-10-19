@@ -1,0 +1,24 @@
+<h4>Dealer's cards</h4>
+
+<ul>
+  <% session[:dealer_cards].each do |card| %>
+    <li><%= card.to_s %></li>
+  <% end %>
+</ul>
+
+<p>Dealer's total is <%= calculate_total(session[:dealer_cards]) %></p>
+
+<h4><%= session[:username] %>'s cards</h4>
+
+<ul>
+  <% session[:player_cards].each do |card| %>
+    <li><%= card.to_s %></li>
+  <% end %>
+</ul>
+
+<h4><%= session[:username] %> has <%= calculate_total(session[:player_cards]) %>. What would <%= session[:username] %> Like to do?</h4>
+<p><%= session[:username] %> has <strong>$<%= session[:player_money] %></strong>. Bet amount this round: <strong>$<%= session[:current_bet] %></strong> </p>
+
+<form action="deal_card" method="post">
+  <input type="submit" value="Hit" class="btn">
+</form>
