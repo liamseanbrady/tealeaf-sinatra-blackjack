@@ -1,0 +1,50 @@
+<% if session[:game_over] %>  
+  <form action="play_again" method="post">
+    <input type="submit" value="Play Again" class="btn btn-info">
+  </form>
+
+  <form action="quit" method="post">
+    <input type="submit" value="Quit" class="btn">
+  </form>
+<% end %>
+
+<h4>Dealer's cards</h4>
+
+<ul>
+  <% session[:dealer_cards].each do |card| %>
+    <li><%= card.to_s %></li>
+  <% end %>
+</ul>
+
+<% if session[:player_turn_over] && !session[:game_over] %>
+  <form action="hit_dealer" method="post">
+    <input type="submit" value="View the dealer's next card" class="btn btn-default">
+  </form>
+<% end %>
+
+<p>Dealer's total is <%= calculate_total(session[:dealer_cards]) %></p>
+
+<% if session[:player_turn_over] && !session[:game_over] %>
+  <form action="dealer" method="post">
+    <input type="submit" value="Hit" name="hit" class="btn btn-success">
+    <input type="submit" value="Stay" name="stay" class="btn btn-warning">
+  </form>
+<% end %>
+
+<h4><%= session[:username] %>'s cards</h4>
+
+<ul>
+  <% session[:player_cards].each do |card| %>
+    <li><%= card.to_s %></li>
+  <% end %>
+</ul>
+
+<h4><%= session[:username] %> has <%= calculate_total(session[:player_cards]) %>. What would <%= session[:username] %> Like to do?</h4>
+<p><%= session[:username] %> has <strong>$<%= session[:player_money] %></strong>. Bet amount this round: <strong>$<%= session[:current_bet] %></strong> </p>
+
+<% if !session[:player_turn_over] %>
+  <form action="player" method="post">
+    <input type="submit" value="Hit" name="hit" class="btn btn-success">
+    <input type="submit" value="Stay" name="stay" class="btn btn-warning">
+  </form>
+<% end %>
