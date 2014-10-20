@@ -1,0 +1,34 @@
+<h1>Blackjack!</h1>
+
+<p>Welcome <%= session[:player_name] %>.</p>
+
+<h4>Dealer's Cards</h4>
+
+<ul>
+  <% session[:dealer_cards].each do |card| %>
+    <li><img src='<%= create_image_path(card) %>'></li>
+  <% end %>
+</ul>
+
+<% if session[:dealer_turn] && calculate_total(session[:dealer_cards]) < 17 %>
+  <form action="/dealer_hit" method="post">
+    <input type="submit" value="View dealer's next card" class="btn btn-info">
+  </form>
+<% end %>
+
+<h4><%= session[:player_name] %>'s Cards</h4>
+
+<ul>
+  <% session[:player_cards].each do |card| %>
+    <li><img src='<%= create_image_path(card) %>'></li>
+  <% end %>
+</ul>
+
+<p><%= session[:player_name] %> has a total of <%= calculate_total(session[:player_cards]) %></p>
+
+<% if !session[:dealer_turn] %>
+  <form action="/player" method="post">
+    <input type="submit" value="Hit" name="hit" class="btn btn-success">
+    <input type="submit" value="Stay" name="stay" class="btn btn-warning">
+  </form>
+<% end %>
