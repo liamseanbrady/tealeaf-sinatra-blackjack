@@ -1,0 +1,27 @@
+img.card_image {
+  border: 0px solid #EFEFEF;
+  border-radius: 3%;
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 0 20px 5px 0;
+  height: 10%;
+  width: 10%;
+}
+
+form#hit_form {
+  float: left;
+  margin-right: 10px;
+}
+
+form#stay_form {
+  float: left;
+}
+
+.well {
+  background: #31914D;
+  border: 2px solid #666;
+  border-radius: 8px;
+}
+
+h4, h5 {
+  color: #DDD;
+}
