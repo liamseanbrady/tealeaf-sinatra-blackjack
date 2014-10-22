@@ -10,7 +10,7 @@ View the app live on Heroku [here](/)
 
 ### Game Design
 
-  ## HTTP Routes Needed
+  #### HTTP Routes Needed
 
   - **GET**
     - /
@@ -27,19 +27,19 @@ View the app live on Heroku [here](/)
     - /game/player/stay
     - /game/dealer/hit
 
-  ## Helper Methods Needed
+  #### Helper Methods Needed
 
   - Calculate total of player and dealer cards
   - Winner, loser and tie methods
 
-  ## UI Design
+  #### UI Design
 
   - Clean
   - Easy for user to navigate
 
-  ## Game Design
+  #### Game Design
 
-## Notes
+### Notes
 
   1. Make sure the 'sinatra' gem is installed.
   2. From the command line, you can start the server by 'ruby main.rb'
