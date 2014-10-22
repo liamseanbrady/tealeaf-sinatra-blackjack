@@ -1,16 +1,16 @@
-## A Blackjack Game (using Sinatra)
+# A Blackjack Game (using Sinatra)
 
 This is a **learning project**. The sole purpose of this project was to be exposed to the statelessness of HTTP. **Sinatra is used** in contrast to Rails because it is closer to the metal and therefore makes stateless nature of HTTP more clear. A **cookie is used as the model**, and allows for some persitence.
 
 This project was completed as an assignment as part of Tealeaf Academy's 'Introduction to Ruby and Web Development' course.
 
-### Deployment
+## Deployment
 
 View the app live on Heroku [here](/)
 
-### Game Design
+## Game Design
 
-#### Routes Needed (HTTP)
+### Routes Needed (HTTP)
 
 - **GET**
   - /
@@ -27,19 +27,19 @@ View the app live on Heroku [here](/)
   - /game/player/stay
   - /game/dealer/hit
 
-#### Helper Methods Needed
+### Helper Methods Needed
 
 - Calculate total of player and dealer cards
 - Winner, loser and tie methods
 
-#### UI Design
+### UI Design
 
 - Clean
 - Easy for user to navigate
 
-#### Game Design
+### Game Design
 
-### Notes
+## Notes
 
   1. Make sure the 'sinatra' gem is installed.
   2. From the command line, you can start the server by 'ruby main.rb'
