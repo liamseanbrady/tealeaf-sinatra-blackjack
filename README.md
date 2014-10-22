@@ -10,32 +10,32 @@ View the app live on Heroku [here](/)
 
 ### Game Design
 
-  #### HTTP Routes Needed
+  #### Routes Needed (HTTP)
 
-  - **GET**
-    - /
-    - /new_player
-    - /bet
-    - /game
-    - /game/dealer
-    - /game_over
+    - **GET**
+      - /
+      - /new_player
+      - /bet
+      - /game
+      - /game/dealer
+      - /game_over
 
-  - **POST**
-    - /new_player
-    - /bet
-    - /game/player/hit
-    - /game/player/stay
-    - /game/dealer/hit
+    - **POST**
+      - /new_player
+      - /bet
+      - /game/player/hit
+      - /game/player/stay
+      - /game/dealer/hit
 
   #### Helper Methods Needed
 
-  - Calculate total of player and dealer cards
-  - Winner, loser and tie methods
+    - Calculate total of player and dealer cards
+    - Winner, loser and tie methods
 
   #### UI Design
 
-  - Clean
-  - Easy for user to navigate
+    - Clean
+    - Easy for user to navigate
 
   #### Game Design
 
