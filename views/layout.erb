@@ -2,24 +2,37 @@
 <html>
   <head>
     <title>My First App</title>
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/application.css">
   </head>
-  <body style="padding-top: 50px;">
+  <body style="padding-top: 95px;">
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
             <ul class="nav">
-              <li><a href="/">Nav Item</a></li>
+              <li class="logo"><a href="#"><img src="/images/logo/logo.png"></a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li class="restart_button"><a href="/">Start Over</a></li>
+              <li><a href="/">About</a></li>
+              <li><a href="/">Blog</a></li>
+              <li><a href="/">Github</a></li>
             </ul>
         </div>
       </div>
     </div>
 
+
   <div class="container">
     <%if @error %>
       <div class="alert alert-error"><%=@error%></div>
+    <% end %>
+    <%if @success %>
+      <div class="alert alert-success"><%=@success%></div>
+    <% end %>
+    <%if @info %>
+      <div class="alert alert-info"><%=@info%></div>
     <% end %>
       <%= yield %>
   </div>

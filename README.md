@@ -81,7 +81,7 @@ View the app live on Heroku [here](/)
 - Player entering invalid name (e.g, empty string).
 - Hiding dealer's first card until the player's turn is over.
 - Player betting above the money they have available, or entering a negative number.
-- Player not meeting minumum bet for a round, or exceeding bet maximum for a round.
+- Player not meeting minimum bet for a round, or exceeding bet maximum for a round.
 
 
 ## Notes

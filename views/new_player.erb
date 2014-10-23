@@ -1,0 +1,15 @@
+<form action="/new_player" method="post" class="form">
+  <br/>
+  <label>What's your name and gender?</label>
+  <input type="text" name="player_name" placeholder="Enter your first name">
+  <br/>
+  <select name="player_gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <br/>
+  <label>What value of chips would you like? ($)</label>
+  <input type="text" name="player_money" placeholder="$"><span class="form_suffix well error">minimum value = $50</span> <span class="form_suffix well success">maximum value = $700</span>
+  <br/>
+  <input type="submit" value="Submit" class="btn">
+</form>

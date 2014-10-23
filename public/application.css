@@ -1,0 +1,357 @@
+.navbar-inner {
+  background: #9965CC;
+  min-height: 70px;
+}
+
+.navbar-inner .nav li a {
+  margin-top: 26px;
+  padding: 10px;
+  color: #FFF;
+  font-size: 1.1em;
+}
+
+.nav li.restart_button a {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 15px;
+  margin-top: 30px;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.nav li.restart_button a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 15px;
+  margin-top: 30px;
+  border-radius: 4px;
+}
+
+
+.navbar-inner .nav li a:hover {
+  color: #FFF;
+}
+
+.navbar-inner .nav {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar-inner .nav .logo {
+  font-size: 1.9em;
+  font-weight: 200;
+  opacity: 0.6;
+  letter-spacing: 2px;
+  padding: 0;
+  margin-top: -25px;
+}
+
+.form input {
+  background: #F7F7F7;
+  border:none;
+  border-bottom: 2px solid transparent;
+  box-shadow: none;
+  padding: 10px 12px;
+}
+
+.form input:focus {
+  border: none;
+  border-bottom: 2px solid #9965CC;
+  box-shadow: none;
+}
+
+.form input[name="current_bet"] {
+  width: 65px;
+}
+
+.form input[type="submit"] {
+  background: #9965CC;
+  border: none;
+  box-shadow: none;
+  padding: 8px 15px;
+  margin-top: 10px;
+  color: #FFF;
+  font-weight: 600;
+}
+
+.form input[type="submit"]:hover {
+  background: #9D6FCB;
+}
+
+.form label {
+  font-size: 2.5em;
+  color: #777;
+  font-weight: 200;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+select {
+  border: none;
+  box-shadow: none;
+  color: #999999;
+  outline: none;
+}
+
+.form_prefix {
+  color: #777;
+  font-size: 1.5em;
+  font-weight: 400;
+  padding-bottom: 20px;
+  margin-right: 10px;
+}
+
+.form_suffix {
+  color: #D7D7D7;
+  font-size: 1em;
+  font-weight: 400;
+  margin-left: 20px;
+  padding: 4px 10px;
+}
+
+.success {
+  border: 2px solid rgba(93, 203, 133, 0.4);
+}
+
+.error {
+  border: 2px solid rgba(242, 91, 68, 0.4); 
+}
+
+h2.headline {
+  font-size: 1.4em;
+  color: #D5D5D5;
+  font-weight: 300;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  line-height: 1em;
+  padding-bottom: 6px;
+  padding-top: 0;
+  border-bottom: 2px solid #F2F2F2;
+}
+
+h2.welcome {
+  font-size: 2.5em;
+  color: #777;
+  font-weight: 200;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.player_history {
+  border: none;
+  box-shadow: none;
+  margin-top: 40px;
+  background: #F7F7F7;
+  width: 300px;
+}
+
+.player_history li {
+  font-size: 1.2em;
+  font-weight: 600;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+.player_history li.won {
+  color: #5DCB85;
+}
+
+.player_history li.lost {
+  color: #F25B44;
+}
+
+.player_history li.tied {
+  color: #9965CC;
+}
+
+.game_table {
+  width: 100%;
+  background: #EEE;
+  background-image: url('http://subtlepatterns.com/patterns/whitediamond.png');
+  border: 2px solid #F4F4F4;
+  border-radius: 6px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.card_display {
+  margin-top: 5px;
+  margin-left: 40px;
+  margin-bottom: 50px;
+  max-width: 45%;
+}
+
+.game_info {
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 140px;
+}
+
+.game_info table {
+  margin-right: 20px;
+}
+
+.game_info td {
+  padding: 10px;
+}
+
+.game_info .bet td {
+  padding-top: 25px;
+}
+
+.game_info .bet .scores {
+  background: #D5D5D5;
+  border-radius: 4px;
+  padding: 8px 25px;
+  font-size: 1em;
+  color: #777;
+  font-weight: 600;
+}
+
+.game_info .titles {
+  color: #999;
+  font-size: 1.3em;
+  text-align: left;
+  padding-right: 25px;
+  font-weight: 600;
+}
+
+.game_info .scores {
+  background: #9965CC;
+  border-radius: 4px;
+  padding: 8px 25px;
+  font-size: 1em;
+  color: #FFF;
+}
+
+.card_image {
+  height: 130px;
+  width: 90px;
+  margin-top: 5px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.3);
+  margin-left: 8px;
+  background: #FFF;
+  padding: 5px 2px 4px 2px;
+}
+
+.player_button_box {
+  margin-left: 60px;
+}
+
+.player_buttons {
+  margin-top: 0px;
+  padding-right: 80px;
+}
+
+.player_button_form {
+  display: inline-block;
+}
+
+.game_table .player_button_form .btn-stay {
+  background: rgba(119, 119, 119, 1.0);
+  margin-left: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.game_table .player_button_form .btn-stay:hover {
+  background: rgba(119, 119, 119, 1.0);
+}
+
+.game_table .player_button_form .btn-stay:active {
+  background: rgba(119, 119, 119, 0.91);
+}
+
+.game_table .player_button_form .btn-hit {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.cards_header {
+  font-size: 1.4em;
+  width: 430px;
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: 300;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  line-height: 1em;
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  background-color: #F7F7F7;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+.alert-danger,
+.alert-error {
+  color: #FFF;
+  background-color: #F25B44;
+  border: none;
+}
+
+.alert-success {
+  color: #FFF;
+  background-color: #5DCB85;
+  border: none;
+}
+
+.alert-info {
+  color: #FFF;
+  background-color: #9965CC;
+  border: none;
+}
+
+form.hidden_card {
+  margin-top: 0px;
+  padding-right: 80px;
+}
+
+.play_again_button a {
+  background: #9965CC;
+  color: #FFF;
+  font-weight: 600;
+  width: 50%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  margin-left: 0;
+  border-radius: 4px;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.quit_button a {
+  background: #DDD;
+  color: #999;
+  font-weight: 600;
+  width: 48%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  margin-left: 2%;
+  border-radius: 4px;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+/* 
+  table green #64C773
+  error red #F25B44  
+  success green #5DCB85
+  gold #EDE33A
+ */
