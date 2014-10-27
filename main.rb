@@ -132,9 +132,8 @@ post '/bet' do
     redirect '/game'
   else
     @error = "Please enter a valid bet amount"
+    erb :bet
   end
-    
-  erb :bet
 end
 
 get '/game' do
