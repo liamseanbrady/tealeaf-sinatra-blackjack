@@ -6,6 +6,8 @@ set :sessions, true
 MINIMUM_CHIPS = 50
 MAXIMUM_CHIPS = 700
 MINIMUM_BET = 50
+BLACKJACK_AMOUNT = 21
+DEALER_HIT_MINIMUM = 17
 
 helpers do
   def calculate_total(cards)
@@ -20,7 +22,7 @@ helpers do
     end
 
     values.select { |val| val == 'A' }.count.times do
-      break if total <= 21
+      break if total <= BLACKJACK_AMOUNT
       total -= 10
     end
 
@@ -50,18 +52,20 @@ helpers do
 
   def winner!(msg)
     @game_over = true
+    @hide_dealer_first_card = false
     @show_hit_or_stay_buttons = false
     @show_dealer_hit_button = false
-    @success = "#{session[:player_name]} won. #{msg}"
+    @winner = "#{session[:player_name]} won. #{msg}"
     session[:player_money] += session[:current_bet].to_i
     session[:player_history] << "won"
   end
 
   def loser!(msg)
     @game_over = true
+    @hide_dealer_first_card = false
     @show_hit_or_stay_buttons = false
     @show_dealer_hit_button = false
-    @error = "#{session[:player_name]} lost. #{msg}"
+    @loser = "#{session[:player_name]} lost. #{msg}"
     session[:player_money] -= session[:current_bet].to_i
     session[:player_history] << "lost"
 
@@ -72,6 +76,7 @@ helpers do
 
   def tie!(msg)
     @game_over = true
+    @hide_dealer_first_card = false
     @show_hit_or_stay_buttons = false
     @show_dealer_hit_button = false
     @info = "It's a tie!. #{msg}"
@@ -81,6 +86,7 @@ end
 
 before do
   @show_hit_or_stay_buttons = true
+  @hide_dealer_first_card = false
   @game_over = false
 end
 
@@ -142,7 +148,9 @@ get '/game' do
   session[:dealer_cards] << session[:deck].pop
   session[:dealer_cards] << session[:deck].pop
 
-  if calculate_total(session[:player_cards]) == 21
+  @hide_dealer_first_card = true
+
+  if calculate_total(session[:player_cards]) == BLACKJACK_AMOUNT
     winner!("#{session[:player_pronoun]} hit blackjack!")
   end
 
@@ -150,16 +158,18 @@ get '/game' do
 end
 
 post '/game/player/hit' do
+  @hide_dealer_first_card = true
+
   session[:player_cards] << session[:deck].pop
 
   player_total = calculate_total(session[:player_cards])
 
-  if player_total == 21
+  if player_total == BLACKJACK_AMOUNT
     winner!("#{session[:player_pronoun]} hit blackjack!")
-  elsif player_total > 21
+  elsif player_total > BLACKJACK_AMOUNT
     loser!("#{session[:player_pronoun]} busted and lost <strong>$#{session[:current_bet]}</strong>")
   end
-  erb :game
+  erb :game, layout: false
 end
 
 post '/game/player/stay' do
@@ -172,21 +182,20 @@ get '/dealer' do
   dealer_total = calculate_total(session[:dealer_cards])
   player_total = calculate_total(session[:player_cards])
 
-  if dealer_total == 21
+  if dealer_total == BLACKJACK_AMOUNT
     loser!("The dealer hit blackjack! #{session[:player_name]} was unlucky. #{session[:player_pronoun]} lost $#{session[:current_bet]}.")
-  elsif dealer_total > 21
+  elsif dealer_total > BLACKJACK_AMOUNT
     winner!("The dealer busted at #{dealer_total}. #{session[:player_name]} made a clever decision to stay at #{player_total}. #{session[:player_pronoun]} won $#{session[:current_bet]}.")
-  elsif dealer_total >= 17
+  elsif dealer_total >= DEALER_HIT_MINIMUM
     redirect '/game/compare'
-    halt
   else
     @show_dealer_hit_button = true
   end
 
-  erb :game
+  erb :game, layout: false
 end
 
-post '/dealer/hit' do
+post '/game/dealer/hit' do
   session[:dealer_cards] << session[:deck].pop
 
   redirect '/dealer'
@@ -207,15 +216,16 @@ get '/game/compare' do
     tie!("#{session[:player_name]} and the dealer both stayed at #{player_total}.")
   end
 
-  erb :game
+  erb :game, layout: false
 end
 
 get '/game_over' do
   erb :game_over
 end
 
-
-
+get '/about' do
+  erb :about
+end
 
 
 

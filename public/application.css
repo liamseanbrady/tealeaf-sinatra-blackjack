@@ -100,7 +100,7 @@ select {
 }
 
 .form_suffix {
-  color: #D7D7D7;
+  color: #D1D1D1;
   font-size: 1em;
   font-weight: 400;
   margin-left: 20px;
@@ -142,6 +142,13 @@ h2.welcome {
   margin-top: 40px;
   background: #F7F7F7;
   width: 300px;
+}
+
+.player_history p {
+  font-size: 1.1em;
+  color: #D5D5D5;
+  padding-left: 10px;
+  font-weight: 500;
 }
 
 .player_history li {
@@ -188,7 +195,7 @@ h2.welcome {
   text-align: right;
   margin-right: 20px;
   margin-top: 50px;
-  margin-bottom: 140px;
+  margin-bottom: 145px;
 }
 
 .game_info table {
@@ -237,6 +244,16 @@ h2.welcome {
   margin-left: 8px;
   background: #FFF;
   padding: 5px 2px 4px 2px;
+}
+
+.card_cover {
+  height: 139px;
+  width: 94px;
+  margin-top: 5px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.3);
+  margin-left: 8px;
+  background: #FFF;
 }
 
 .player_button_box {
@@ -347,6 +364,90 @@ form.hidden_card {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+
+/* About page styles */
+
+h1.main_heading {
+  font-size: 2.5em;
+  color: #777;
+  font-weight: 200;
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+.about_section {
+  text-align: center;
+}
+
+.about_img {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+}
+
+.about_row {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.about_section p {
+  margin-top: 40px;
+  font-size: 1em;
+  color: #C3C3C3;
+  font-weight: 500;
+  padding: 5px 40px;
+}
+
+.about_section a {
+  color: #C3C3C3;
+  text-decoration: underline;
+}
+
+.about_section em {
+  font-style: normal;
+  color: #9965CC;
+}
+
+/* Game over page styles */
+
+#game_over_heading {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #999;
+  font-size: 2.5em;
+  font-weight: 200;
+}
+
+#game_over_message {
+  text-align: center;
+  color: #FFF;
+  font-weight: 900;
+  font-size: 5em;
+  width: 60%;
+  padding: 50px;
+  background-color: #9965CC;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+#game_over_restart {
+  display: block;
+  width: 60%;
+  background: #DDD;
+  color: #999;
+  font-weight: 600;
+  border: none;
+  box-shadow: none;
+  padding: 10px 15px;
+  margin: 70px auto;
+}
+
+#game_over_restart:hover {
+  background: #D5D5D5;
+}
+
 
 
 /* 
