@@ -59,7 +59,7 @@ helpers do
     @show_dealer_hit_button = false
     @winner = "#{session[:player_name]} won. #{msg}"
     session[:player_money] += session[:current_bet].to_i
-    session[:player_history] << "won"
+    session[:player_history] << "won $#{session[:current_bet]}"
   end
 
   def loser!(msg)
@@ -69,7 +69,7 @@ helpers do
     @show_dealer_hit_button = false
     @loser = "#{session[:player_name]} lost. #{msg}"
     session[:player_money] -= session[:current_bet].to_i
-    session[:player_history] << "lost"
+    session[:player_history] << "lost $#{session[:current_bet]}"
 
     if session[:player_money] <= MINIMUM_BET
       redirect '/game_over'
@@ -81,7 +81,7 @@ helpers do
     @hide_dealer_first_card = false
     @show_hit_or_stay_buttons = false
     @show_dealer_hit_button = false
-    @info = "It's a tie!. #{msg}"
+    @info = "It's a tie! #{msg}"
     session[:player_history] << "tied"
   end
 end

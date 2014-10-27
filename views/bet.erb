@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+
     <div class="span-7">
       <form action="/bet" method="post" class="form">
         <br/>
@@ -11,24 +12,27 @@
     </div> 
 
     <div class="span-4 offset1">
-    <div class="well player_history">
-      <h2 class="headline"><strong><%= session[:player_name] %>'s</strong> Game History</h2>
+      <div class="well player_history">
+        <h2 class="headline"><strong><%= session[:player_name] %>'s</strong> Game History</h2>
 
-      <% if session[:player_history].empty? %>
-        <p>You haven't played any games yet...</p>
-      <% else %>
-        <ul>
-          <% session[:player_history].each do |result| %>
-            <% if result == "won" %>
-              <li class="won"><%= result.to_s.capitalize %></li>
-            <% elsif result == "lost" %>
-              <li class="lost"><%= result.to_s.capitalize %></li>
-            <% else %>
-              <li class="tied"><%= result.to_s.capitalize %></li>
+        <% if session[:player_history].empty? %>
+          <p>You haven't played any games yet...</p>
+        <% else %>
+          <ul>
+            <% session[:player_history].each do |result| %>
+              <% if result.split(" ").first == "won" %>
+                <li class="won"><%= result.to_s.capitalize %></li>
+              <% elsif result.split(" ").first == "lost" %>
+                <li class="lost"><%= result.to_s.capitalize %></li>
+              <% else %>
+                <li class="tied"><%= result.to_s.capitalize %></li>
+              <% end %>
             <% end %>
-          <% end %>
-        </ul>
-      <% end %>
-    <div>
+          </ul>
+        <% end %>
+      <div>
+    </div>
+
   </div>
+
 </div>
