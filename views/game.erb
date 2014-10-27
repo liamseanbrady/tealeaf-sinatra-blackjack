@@ -1,4 +1,17 @@
 <div id="game">
+
+  <div class="container">
+    <%if @loser %>
+      <div class="alert alert-error"><%=@loser%></div>
+    <% end %>
+    <%if @winner %>
+      <div class="alert alert-success"><%=@winner%></div>
+    <% end %>
+    <%if @info %>
+      <div class="alert alert-info"><%=@info%></div>
+    <% end %>
+  </div>
+
   <% if @game_over %>
   <div class="game_over_buttons clearfix">
     <div class="play_again_button"><a href="/bet">Play Again</a></div>
@@ -69,7 +82,7 @@
       <% end %>
     
       <% if @show_dealer_hit_button %>
-        <form action="/dealer/hit" method="post" class="form hidden_card" id="dealer_form">
+        <form action="/game/dealer/hit" method="post" class="form hidden_card" id="dealer_form">
           <input type="submit" value="View Dealer's Next Card &rarr;" class="btn">
         </form>
       <% end %>
