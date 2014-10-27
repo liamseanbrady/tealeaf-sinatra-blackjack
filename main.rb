@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 
-set :sessions, true
+use Rack::Session::Cookie, :key => 'rack.session',
+                           :path => '/',
+                           :secret => 'this_is_some_random_string'
 
 MINIMUM_CHIPS = 50
 MAXIMUM_CHIPS = 700
