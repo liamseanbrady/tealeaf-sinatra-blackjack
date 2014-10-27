@@ -8,7 +8,7 @@ View a blog post about my experience of building this app [here](http://www.liam
 
 ## Deployment
 
-View the app live on Heroku [here](/)
+View the app live on Heroku [here](https://flatjack-app.herokuapp.com/)
 
 ## Skills Required
 
