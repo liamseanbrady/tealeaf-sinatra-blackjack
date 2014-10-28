@@ -1,6 +1,6 @@
 # A Blackjack Game (using Sinatra)
 
-This is a **learning project**. The sole purpose of this project was to be exposed to the statelessness of HTTP. **Sinatra is used** in contrast to Rails because it is closer to the metal and therefore makes stateless nature of HTTP more clear. A **cookie is used as the model**, and allows for some persitence.
+This is a **learning project**. The sole purpose of this project was to be exposed to the statelessness of HTTP. **Sinatra is used** in contrast to Rails because it is closer to the metal and therefore makes stateless nature of HTTP more clear. A **cookie is used as the persitence layer**.
 
 This project was completed as an assignment as part of Tealeaf Academy's 'Introduction to Ruby and Web Development' course.
 
